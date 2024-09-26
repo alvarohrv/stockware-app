@@ -1,0 +1,52 @@
+.widgettable{
+    
+    padding: 20px;
+    font-size: var(--textExSm);
+    width: max-content;
+}
+.header_widgettable{
+    border-top: 1px solid var(--color-white);
+    padding-top: 4px;
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+}
+.header_widgettable p{
+    font-weight: bold;
+    padding-left: 4px;
+    font-size: var(--textSm); 
+}
+.header_widgettable span{
+    font-size: var(--textExSm); 
+}
+.body_widgettable{
+
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    /* table-layout: auto; */
+}
+thead{
+    background-color: var(--color-main-color);
+    text-align: left;
+}
+th{
+    padding: 5px;
+    text-align: left;  
+}
+td{
+    border: 1px solid rgb(208, 210, 254);
+    padding: 2px;
+    text-align: left;
+    
+}
+tr td:nth-child(2) {
+    display: flex;
+    width: max-content;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden;
+    align-items: center; 
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto recortado */
+}

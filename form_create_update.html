@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="descripcion de la pagina web">
+    <title> title undefined </title>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> --> <!-- solo leido por IE, ya no utlizado-->
+    <meta name="author" content="Alvaro Ruiz">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="../img/favicon.png"> -->
+    <!-- Fuente -->
+    <link rel="stylesheet" type="text/css" href="./resources/css/mynormalize_ar.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/toggle-btn-menuburger.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/toggle-btn-create.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/aside.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/table.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/infofactura.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">
+    <link rel="stylesheet" type="text/css" href="./style_media_minw800.css">
+    <style type="text/css"> </style>
+  </head>
+  <body class=" contBody">   <!-- contCentrado -->
+    <div class="contHeader hidden"><header class="header"><nav class="navbar wrapper1">Nav</nav><div class="wrapper1">Hero</div></header></div>
+    <div class="contMainAndAside">
+      <aside class="contAside" id="idContAside"> <!-- ASIDE -->
+        <div class="contnamesoft_aside">    </div>
+
+        <div class="contuser_aside">
+
+          <div class="png_user"></div>
+
+          <div class="minimenu_user">
+            <div class="rol_minimenu"> Administrador </div>
+            <div class="options_minimenu">
+              <div class="icon config-icon"></div>
+              <div class="icon"></div>
+              <a href="./index.html"><div class="icon exit-icon"></div></a>              
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contmenu_aside">
+          <div class="itemmenu">
+            <div class="icon home-icon"> </div>
+            <div class="contname_item">
+              <a href="./board.html">
+                <p class="name_item"> Home</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <a href="/moduloInventario.html">
+                <p class="name_item"> Inventario</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <a href="/moduloListaProducto.html">
+                <p class="name_item"> Lista Productos</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Modulo de Ventas</p>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Modulo de Compras</p>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Creacion de productos</p>
+            </div>
+          </div>
+        </div>
+      </aside>  
+
+
+
+
+    <main class="contMain contMain2"> <!-- MAIN  CLASS: direction_column_center-->
+        <div class="continfofactura_main">
+            <div class="toggle-btn-menuburger"><span>&#9776</span></div>
+            <div class="fichainventario">
+                <div class="toggle-btn-create"><span>&#9546</span></div>
+                INVENTARIO PRINCIPAL
+            </div>
+        </div>
+        <div class="contable_main">
+            <form id="create-product-form">
+                <h2>Crear Producto</h2>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required><br><br>
+    
+                <label for="brand">Marca:</label>
+                <input type="text" id="brand" name="brand" required><br><br>
+    
+                <label for="category">Categoría:</label>
+                <input type="text" id="category" name="category" required><br><br>
+    
+                <label for="presentation">Presentación:</label>
+                <input type="text" id="presentation" name="presentation" required><br><br>
+    
+                <label for="status">Estado:</label>
+                <input type="text" id="status" name="status" required><br><br>
+    
+                <button type="submit">Crear Producto</button>
+            </form>
+            <div class="contable_main" >
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Categoria</th>
+                            <th>Presentacion</th>
+                            <th>Estado</th>
+                            <th>Delete</th>                  
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                        <!-- Los productos se añadirán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+      
+
+      
+    </div>
+    <footer class="hidden contFooter"></footer>
+    <script src="script.js"></script>
+    <script src="resources/js/toggle-btn-menuburger.js"></script>
+    <script src="resources/js/get_all_product.js"></script>
+    <script src="resources/js/logica_delete.js"></script>
+  </body>
+</html>

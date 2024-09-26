@@ -1,0 +1,82 @@
+.hidden{
+	display: none;
+}
+
+.contMainAndAside{
+	background: #4C6FC0;
+	width: 100%;
+	height: 100vh;
+}
+
+.contMain{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	height: 100%;
+	width: 100%;
+}
+.contLogin{
+	width: 35%;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.h2__contLogin{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 3rem;
+/*	max-width: 120px;*/
+/*	padding: 0rem 0.5rem;*/
+	margin: 20px 0;
+	text-align: center;
+	color: white;
+	font-weight: normal; /*///// bold, lighter*/
+	letter-spacing: .2rem;
+}
+
+/*---------*/
+.item_form{
+	margin: 25px 0 0 0;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+.campo_form{
+	height: 45px;
+	margin: 3px 0;
+	border-radius: 5px;
+	border: none ;
+	outline: none;
+	font-size: 16px; 
+	color: var(--color-main-color);
+	padding: 5px; 
+}
+
+.options__contLogin{
+	height: 45px;
+	margin: 25px 0;	
+	border: none;
+	outline: none;
+	padding: 5px; 
+
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.button_form{
+	background: #7A96D5;
+	color: white;
+	font-size: 22px;
+	height: 45px;
+	margin: 25px 0;	
+	border-radius: 5px;
+	border: none ;
+	outline: none;
+	padding: 5px; 
+}
+#idmessage{
+	color:red;
+	font-size: var(--textMd);
+}
+
+

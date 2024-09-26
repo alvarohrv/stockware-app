@@ -1,0 +1,212 @@
+[
+    {
+        "nombre": "Desodorante Roll-On",
+        "marca": "Rexona",
+        "categoria": "Desodorante",
+        "presentacion": "Roll-On 50ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón Líquido Antibacterial",
+        "marca": "Lifebuoy",
+        "categoria": "Jabón",
+        "presentacion": "Botella 250ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Champú Hidratante",
+        "marca": "Pantene",
+        "categoria": "Champú",
+        "presentacion": "Botella 400ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante Aerosol",
+        "marca": "Nivea",
+        "categoria": "Desodorante",
+        "presentacion": "Aerosol 150ml",
+        "estado": "Agotado"
+    },
+    {
+        "nombre": "Jabón de Barra",
+        "marca": "Dove",
+        "categoria": "Jabón",
+        "presentacion": "Barra 100g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Champú Anti-Caspa",
+        "marca": "Head & Shoulders",
+        "categoria": "Champú",
+        "presentacion": "Botella 300ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante Roll-On",
+        "marca": "Old Spice",
+        "categoria": "Desodorante",
+        "presentacion": "Roll-On 50ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón Líquido Nutritivo",
+        "marca": "Neutrogena",
+        "categoria": "Jabón",
+        "presentacion": "Botella 200ml",
+        "estado": "Agotado"
+    },
+    {
+        "nombre": "Champú Reparador",
+        "marca": "Garnier",
+        "categoria": "Champú",
+        "presentacion": "Botella 350ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante Aerosol",
+        "marca": "Sanex",
+        "categoria": "Desodorante",
+        "presentacion": "Aerosol 150ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón de Barra Hidratante",
+        "marca": "Aveeno",
+        "categoria": "Jabón",
+        "presentacion": "Barra 90g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Champú Voluminizador",
+        "marca": "Tresemmé",
+        "categoria": "Champú",
+        "presentacion": "Botella 500ml",
+        "estado": "Agotado"
+    },
+    {
+        "nombre": "Desodorante Roll-On",
+        "marca": "Adidas",
+        "categoria": "Desodorante",
+        "presentacion": "Roll-On 50ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón Líquido Suave",
+        "marca": "Cetaphil",
+        "categoria": "Jabón",
+        "presentacion": "Botella 250ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Champú Aclarador",
+        "marca": "L'Oréal",
+        "categoria": "Champú",
+        "presentacion": "Botella 400ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante Roll-On",
+        "marca": "Rexona",
+        "categoria": "Desodorante",
+        "presentacion": "Roll-On 50ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón Líquido Corporal",
+        "marca": "Dove",
+        "categoria": "Jabón",
+        "presentacion": "Botella 400ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Shampoo Anticaspa",
+        "marca": "Head & Shoulders",
+        "categoria": "Shampoo",
+        "presentacion": "Botella 200ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante en Barra",
+        "marca": "Old Spice",
+        "categoria": "Desodorante",
+        "presentacion": "Barra 60g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón en Barra Hidratante",
+        "marca": "Nivea",
+        "categoria": "Jabón",
+        "presentacion": "Barra 100g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Shampoo Reparador",
+        "marca": "Pantene",
+        "categoria": "Shampoo",
+        "presentacion": "Botella 300ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante Aerosol",
+        "marca": "Axe",
+        "categoria": "Desodorante",
+        "presentacion": "Aerosol 150ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón en Barra Exfoliante",
+        "marca": "Palmolive",
+        "categoria": "Jabón",
+        "presentacion": "Barra 120g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Shampoo Voluminizador",
+        "marca": "Garnier Fructis",
+        "categoria": "Shampoo",
+        "presentacion": "Botella 350ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante en Crema",
+        "marca": "Lady Speed Stick",
+        "categoria": "Desodorante",
+        "presentacion": "Crema 45g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón Líquido para Manos",
+        "marca": "Softsoap",
+        "categoria": "Jabón",
+        "presentacion": "Botella 250ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Shampoo Fortalecedor",
+        "marca": "TRESemmé",
+        "categoria": "Shampoo",
+        "presentacion": "Botella 400ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Desodorante en Gel",
+        "marca": "Gillette",
+        "categoria": "Desodorante",
+        "presentacion": "Gel 70ml",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Jabón en Barra para Piel Sensible",
+        "marca": "Aveeno",
+        "categoria": "Jabón",
+        "presentacion": "Barra 110g",
+        "estado": "Disponible"
+    },
+    {
+        "nombre": "Shampoo Hidratante",
+        "marca": "Herbal Essences",
+        "categoria": "Shampoo",
+        "presentacion": "Botella 500ml",
+        "estado": "Disponible"
+    }
+]

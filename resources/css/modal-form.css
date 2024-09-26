@@ -1,0 +1,85 @@
+
+#idModalForm {
+    overflow:hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    z-index: 100;
+}
+
+.contForm {
+    width: 400px;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contForm h2 {
+    font-size: var(-textLg);
+    margin-bottom: 20px;
+    color: var(--color-white);
+}
+
+/* Estilo para los campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: var(--textMd);
+    margin-bottom: 5px;
+    color: var(--color-white);
+}
+
+input[type="text"] {
+    color: var(--color-backgrundmodule);
+    width: 100%;
+    padding: 8px;
+    font-size: var(--textMd);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para los botones */
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    
+}
+
+.modal-buttons button {
+    width: 25%;
+    font-size: var(--textMd);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-modal-button {
+    background-color: var(--color-of-links);
+    color: #ffffff;
+}
+
+#send-button {
+    background-color: var(--color-create);
+    color: #ffffff;
+}
+
+button:hover {
+    opacity: 0.8;
+}

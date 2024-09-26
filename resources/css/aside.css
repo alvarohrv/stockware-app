@@ -1,0 +1,127 @@
+/*
+	--h-nav-bar: 5.0rem;
+	--h-cont-user: 10.0rem;
+	--h-item-menu:1.8rem
+*/
+
+/* ASIDE */
+exit-icon
+
+.contnamesoft_aside{
+    height: var(--h-nav-bar);
+    width: 100%;
+}
+.contuser_aside{
+    height: auto;
+    padding: 1.0rem;
+    background-color: var(--color-aside-dark);
+}
+.contmenu_aside{
+    width: 100%;
+    margin: 4px;
+}
+.png_user{
+    background-image: url('../img/profile-user.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    object-fit: contain; 
+    width: var(--h-cont-imguser) ;
+    height: var(--h-cont-imguser);
+    margin: 0 auto;
+    cursor: pointer;
+}
+.minimenu_user{}
+
+.rol_minimenu{
+    color: var(--color-white);
+    text-align: center;
+}
+.options_minimenu{
+    display: flex;
+    justify-content: center;
+}
+
+.itemmenu{
+    display: flex;
+    width: 100%;
+    height: var(--h-item-menu);
+    margin: 5px;
+    cursor: pointer;
+}
+.icon{
+    filter: invert(1);
+    object-fit: cover;
+    width: var(--h-item-menu);
+    height: var(--h-item-menu);
+}
+
+.contname_item{
+    width: 100%;
+    height: 100%;
+    padding-left: 2.0rem;
+}
+.name_item{
+    color: var(--color-white);
+}
+
+/*ICNOCOS*/
+.config-icon{
+    background-image: url('../img/config.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: var(--h-item-menu);
+    height: var(--h-item-menu);
+
+    opacity: 0.2; 
+}
+.exit-icon{
+    background-image: url('../img/exit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: var(--h-item-menu);
+    height: var(--h-item-menu);
+}
+.inventory-icon{
+    background-image: url('../img/inventory3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: var(--h-item-menu);
+    height: var(--h-item-menu);
+}
+.home-icon{
+    background-image: url('../img/home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: var(--h-item-menu);
+    height: var(--h-item-menu);
+}
+
+
+.contAside.active{
+    display: none;
+}
+
+.contmenu_aside .itemmenu:nth-last-child(-n +3) p{
+    color: grey;
+}
+
+@media  screen and (max-width: 670px){
+
+    .contAside{
+        position: absolute;
+        width: 100vw;
+        display: none;
+    }
+
+    .contAside.active{
+        display: block;
+    }
+}
+
+
+

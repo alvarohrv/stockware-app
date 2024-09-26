@@ -1,0 +1,21 @@
+@media  screen and (max-width: 670px){
+    tr{
+        font-size: 1.1rem;
+    }
+
+    th:nth-last-child(-n + 4):not(:last-child){
+        display: none;
+    }
+    td:nth-last-child(-n + 4):not(:last-child){
+        display: none;
+    }
+
+    .header_contable{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:10px;
+    }
+    .cardtec{
+		min-width: 46%;
+	}
+}

@@ -1,0 +1,29 @@
+
+
+.continfofactura_main{
+    width: var(--wrapContainerTable);
+    margin: 0 auto;
+    height: auto;
+    background-color: var(--color-secondary);
+    border-radius: 20px 20px 0 0;
+    padding: 18px
+}
+
+.fichainventario{
+    position: relative;
+    color: var( --color-white);
+    text-align: center;
+}
+
+.contable_main{
+    width: var(--wrapContainerTable);
+    height: auto;
+    margin: 0 auto;
+    background-color: var(--color-secondary);
+}
+
+.header_contable{
+    display: flex;
+    justify-content: space-around;
+}
+

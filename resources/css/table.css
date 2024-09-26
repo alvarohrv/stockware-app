@@ -1,0 +1,24 @@
+
+table{
+    width: 100%;
+    margin: 0 auto;
+    padding: 3px 3px 7px 3px;
+}
+thead{
+    background-color: var(--color-headtable);
+}
+
+tbody{
+    background-color: var(--color-bodytable);   
+}
+.tabla tr:nth-child(1){
+    width: 20%;
+}
+.tabla tr:nth-child(2){
+}
+.tabla tr:nth-child(3){
+    width: 20%;
+}
+.tabla tr:nth-child(4){
+    width: 20%;
+}

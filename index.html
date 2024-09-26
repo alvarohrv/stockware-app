@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="descripcion de la pagina web">
+    <title> title undefined </title>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> --> <!-- solo leido por IE, ya no utlizado-->
+    <meta name="author" content="Alvaro Ruiz">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="../img/favicon.png"> -->
+    <!-- Fuente -->
+    <link rel="stylesheet" type="text/css" href="./resources/css/mynormalize_ar.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./style_media_minw800.css">
+    <style type="text/css">  </style>
+  </head>
+  <body class=" contBody">   <!-- contCentrado -->
+    <div class="contHeader hidden"><header class="header"><nav class="navbar wrapper1">Nav</nav><div class="wrapper1">Hero</div></header></div>
+    <div class="contMainAndAside">
+      <main class="contMain">
+          <div class="contLogin">
+            <h2 class="h2__contLogin"> Gestor de Inventario</h2>
+            <div class="contform__contLogin">
+              <form class="form" id="loginForm" action="">
+                  <div class="item_form">
+                      <label for="username">Usuario:</label>
+                      <input class="campo_form" type="text" id="username" name="username" placeholder="123">
+                     <!-- required -->
+                  </div>
+                  <div class="item_form">
+                      <label for="password">Contraseña:</label>
+                      <input class="campo_form" type="password" id="password" name="password" >
+                      <!-- required -->
+                  </div>
+                  <div >
+                      <input class="button_form" type="submit" value="Inicia sesión" placeholder="123">
+                  </div>
+              </form>
+              <div id="idmessage"></div>
+            </div>
+            <div class="options__contLogin">
+              <div >
+                  <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
+              </div>
+            </div> 
+          </div>
+      </main>
+      <aside class="hidden contAside"></aside>  
+    </div>
+    <footer class="hidden contFooter"></footer>
+    <script src="resources/js/login.js"></script>
+  </body>
+</html>
