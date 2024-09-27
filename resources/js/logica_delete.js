@@ -1,8 +1,8 @@
 function deleteProduct(id) {
     if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
 
-        //fetch(`./api/delete_product.php?id=${id}`, {
-        fetch(`http://localhost/ProySenaProdv01/api/delete_product.php?id=${id}`, {
+        //fetch(`./api/delete_product.php?id=${id}`, { //PROD
+        fetch(`http://localhost/ProySenaProdv01/api/delete_product.php?id=${id}`, {  //LOCAL
             method: 'DELETE'
         })
         .then(response => response.json())

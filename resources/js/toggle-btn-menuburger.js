@@ -1,4 +1,4 @@
-
+/** afecta el contenerdor aside, lo despara el boton burger */
 const btnToggle = document.querySelector('.toggle-btn-menuburger'); 
 btnToggle.addEventListener('click', function () {
   document.getElementById('idContAside').classList.toggle('active');

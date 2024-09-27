@@ -1,0 +1,20 @@
+[
+    {
+        "username": "ar",
+        "password": "ar",
+        "rol": "Admin",
+        "estado": "Disponible"
+    },
+    {
+        "username": "sandra",
+        "password": "sandra",
+        "rol": "Vendedora",
+        "estado": "Disponible"
+    },
+    {
+        "username": "julieth",
+        "password": "julieth",
+        "rol": "Auditora",
+        "estado": "Disponible"
+    }
+]

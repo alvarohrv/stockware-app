@@ -18,8 +18,9 @@
     <link rel="stylesheet" type="text/css" href="./resources/css/toggle-btn-create.css">
     <link rel="stylesheet" type="text/css" href="./resources/css/aside.css">
     <link rel="stylesheet" type="text/css" href="./resources/css/main.css">
-    <link rel="stylesheet" type="text/css" href="./resources/css/table.css">
-    <link rel="stylesheet" type="text/css" href="./resources/css/infofactura.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/product-list-module.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/contable-main.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/modal.css">
     <link rel="stylesheet" type="text/css" href="./resources/css/modal-form.css">
     <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">
     <!-- <link rel="stylesheet" type="text/css" href="./style_media_minw800.css"> -->
@@ -74,7 +75,9 @@
           <div class="itemmenu">
             <div class="icon inventory-icon"> </div>
             <div class="contname_item">
-              <p class="name_item"> Modulo de Ventas</p>
+              <a href="/moduloRegistoVenta.html">
+                <p class="name_item"> Modulo de Ventas</p>
+              </a>
             </div>
           </div>
           <div class="itemmenu">
@@ -95,7 +98,7 @@
         <div class="continfofactura_main">
           <div class="toggle-btn-menuburger"><span>&#9776</span></div>
           <div class="fichainventario">
-            <div class="toggle-btn-create"><span>&#9546</span></div>
+            <div class="toggle-btn-modal"><span>&#9546</span></div>
             INVENTARIO PRINCIPAL
           </div>
         </div>
@@ -129,7 +132,7 @@
 
     
 
-    <div id="idModalForm">
+    <div id="idModal">
       <div class="contForm">
         <h2>Crear Un Producto</h2>
         <form id="create-product-form">
@@ -171,6 +174,7 @@
     <script src="resources/js/toggle-btn-menuburger.js"></script>
     <script src="resources/js/get_all_product.js"></script>
     <script src="resources/js/logica_delete.js"></script>
-    <script src="resources/js/create_product.js"></script>
+    <script src="resources/js/modal.js"></script>
+    <script src="resources/js/create_product_modal.js"></script>
   </body>
 </html>

@@ -1,24 +1,13 @@
-
-table{
+table {
     width: 100%;
-    margin: 0 auto;
-    padding: 3px 3px 7px 3px;
-}
-thead{
-    background-color: var(--color-headtable);
-}
-
-tbody{
-    background-color: var(--color-bodytable);   
-}
-.tabla tr:nth-child(1){
-    width: 20%;
-}
-.tabla tr:nth-child(2){
-}
-.tabla tr:nth-child(3){
-    width: 20%;
-}
-.tabla tr:nth-child(4){
-    width: 20%;
-}
+    border-collapse: collapse;
+    position: relative;
+  }
+    table th, table td {
+    border: 1px solid #ddd;
+    padding: 3px;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }

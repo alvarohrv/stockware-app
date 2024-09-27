@@ -16,10 +16,15 @@
 }
 
 .contable_main{
+    font-family: Arial, sans-serif;
     width: var(--wrapContainerTable);
     height: auto;
     margin: 0 auto;
     background-color: var(--color-secondary);
+}
+.contable_main--whitebackground{
+    padding: 20px;
+    background-color: #f4f4f9;
 }
 
 .header_contable{

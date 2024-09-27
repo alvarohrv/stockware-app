@@ -1,0 +1,92 @@
+[
+    {
+        "nombre": "Minoristas Articulos de Aseo Personal SAS",
+        "tipo_documento": "NIT",
+        "numero_documento": "9003547584",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Juan Carlos Ramírez",
+        "tipo_documento": "CC",
+        "numero_documento": "1023654789",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Distribuidora Cosméticos y Más Ltda",
+        "tipo_documento": "NIT",
+        "numero_documento": "8002549873",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Paola Andrea Torres",
+        "tipo_documento": "CC",
+        "numero_documento": "1007456321",
+        "estado_actor": "Inactivo"
+    },
+    {
+        "nombre": "Comercializadora Global S.A.S",
+        "tipo_documento": "NIT",
+        "numero_documento": "9004875321",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Carlos Andrés Pérez",
+        "tipo_documento": "CC",
+        "numero_documento": "1013569874",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Limpieza Total y Servicios S.A",
+        "tipo_documento": "NIT",
+        "numero_documento": "8301456987",
+        "estado_actor": "Inactivo"
+    },
+    {
+        "nombre": "Maria Fernanda Gómez",
+        "tipo_documento": "CC",
+        "numero_documento": "1032654789",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Proveedor Nacional de Productos de Aseo LTDA",
+        "tipo_documento": "NIT",
+        "numero_documento": "8002143695",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Luis Eduardo Martínez",
+        "tipo_documento": "CC",
+        "numero_documento": "1018456329",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Productos Higiénicos del Norte S.A",
+        "tipo_documento": "NIT",
+        "numero_documento": "9001245786",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Corporación de Bienestar y Salud",
+        "tipo_documento": "RUT",
+        "numero_documento": "1239874560",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Andrea Camila Rodríguez",
+        "tipo_documento": "CC",
+        "numero_documento": "1009876541",
+        "estado_actor": "Inactivo"
+    },
+    {
+        "nombre": "Distribuidora de Productos Higiénicos S.A.S",
+        "tipo_documento": "NIT",
+        "numero_documento": "9003654785",
+        "estado_actor": "Activo"
+    },
+    {
+        "nombre": "Luis Fernando Castaño",
+        "tipo_documento": "CC",
+        "numero_documento": "1025369871",
+        "estado_actor": "Activo"
+    }
+]

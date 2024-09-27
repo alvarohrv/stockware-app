@@ -4,7 +4,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('./api/login.php', {
+    //fetch('./api/login.php', { //PROD
+    fetch('http://localhost/ProySenaProdv01/api/login.php', {   //LOCAL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

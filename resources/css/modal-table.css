@@ -1,0 +1,76 @@
+
+
+  /* ///////////////// MODAL */
+
+
+  .contForm {
+    width:65vw;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contForm h2 {
+    font-size: var(-textLg);
+    margin-bottom: 20px;
+    color: var(--color-white);
+}
+
+  /* Estilo para los botones */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  
+}
+
+.modal-buttons button {
+  width: 25%;
+  font-size: var(--textMd);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#close-modal-button {
+  background-color: var(--color-of-links);
+  color: #ffffff;
+}
+
+#send-button {
+  background-color: var(--color-create);
+  color: #ffffff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/** styles pegados*/
+
+.contable_modal{
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  height: 300px;
+}
+.overflow-y-auto{
+  overflow-y: auto; 
+  
+}
+
+.fixed{
+  position: sticky;
+  top: -21px; /*tomado del padding del contenedor*/
+  left: 0;
+}
+
+.header-venta, .cliente-info, .producto-filtros, .tabla-productos, .footer {
+  margin-bottom: 20px;
+}

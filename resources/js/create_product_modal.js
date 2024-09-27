@@ -1,35 +1,12 @@
 
 /** Hay dos url a modificar si se esta en local o produccion */
 
-const productTableBody = document.getElementById('product-table-body'); //????
-
+const productTableBody = document.getElementById('product-table-body');
 const form = document.getElementById('create-product-form');
-const toggleBtnCreate = document.querySelector('.toggle-btn-create');
-const modalForm = document.getElementById('idModalForm');
-const closeModalBtn = document.getElementById('close-modal-button');
+const modalForm = document.getElementById('idModal');
 const sendButton = document.getElementById('send-button');
 const contBody = document.getElementsByClassName('contBody')[0];
 
-
-// Agrega un evento de clic al botón para mostrar el modal
-toggleBtnCreate.addEventListener('click', function() {
-    modalForm.style.display = 'flex'; // Muestra el modal
-    contBody.style.overflowY = 'hidden';
-});
-
-// Agrega un evento de clic al botón de cerrar para ocultar el modal
-closeModalBtn.addEventListener('click', function() {
-    modalForm.style.display = 'none'; // Oculta el modal
-    contBody.style.overflowY = 'auto';
-});
-
-// Cerrar el modal si se hace clic fuera de la caja del formulario
-window.addEventListener('click', function(event) {
-    if (event.target == modalForm) {
-        modalForm.style.display = 'none';
-        contBody.style.overflowY = 'auto';
-    }
-});
 
 sendButton.addEventListener('click', async function(event) {
     event.preventDefault(); // Evita el comportamiento por defecto del formulario

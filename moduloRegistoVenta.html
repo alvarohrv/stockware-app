@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="description" content="descripcion de la pagina web">
+    <title> title undefined </title>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> --> <!-- solo leido por IE, ya no utlizado-->
+    <meta name="author" content="Alvaro Ruiz">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="../img/favicon.png"> -->
+    <!-- Fuente -->
+    <link rel="stylesheet" type="text/css" href="./resources/css/mynormalize_ar.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/toggle-btn-menuburger.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/toggle-btn-list.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/aside.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/table.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/contable-main.css">
+    <link rel="stylesheet" type="text/css" href="./resources/css/sales-reg-module.css">    
+    <link rel="stylesheet" type="text/css" href="./resources/css/modal.css">
+      <link rel="stylesheet" type="text/css" href="./resources/css/modal-table.css">
+
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">
+    <link rel="stylesheet" type="text/css" href="./style_media_minw800.css">
+    <style type="text/css"> </style>
+  </head>
+  <body class=" contBody">   <!-- contCentrado -->
+    <div class="contHeader hidden"><header class="header"><nav class="navbar wrapper1">Nav</nav><div class="wrapper1">Hero</div></header></div>
+    <div class="contMainAndAside">
+      <aside class="contAside" id="idContAside"> <!-- ASIDE -->
+        <div class="contnamesoft_aside">    </div>
+
+        <div class="contuser_aside">
+
+          <div class="png_user"></div>
+
+          <div class="minimenu_user">
+            <div class="rol_minimenu"> Administrador </div>
+            <div class="options_minimenu">
+              <div class="icon config-icon"></div>
+              <div class="icon"></div>
+              <a href="./index.html"><div class="icon exit-icon"></div></a>              
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contmenu_aside">
+          <div class="itemmenu">
+            <div class="icon home-icon"> </div>
+            <div class="contname_item">
+              <a href="./board.html">
+                <p class="name_item"> Home</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <a href="/moduloInventario.html">
+                <p class="name_item"> Inventario</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <a href="/moduloListaProducto.html">
+                <p class="name_item"> Lista Productos</p>
+              </a>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Modulo de Ventas</p>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Modulo de Compras</p>
+            </div>
+          </div>
+          <div class="itemmenu">
+            <div class="icon inventory-icon"> </div>
+            <div class="contname_item">
+              <p class="name_item"> Creacion de productos</p>
+            </div>
+          </div>
+        </div>
+      </aside>  
+      <main class="contMain contMain2"> <!-- MAIN  CLASS: direction_column_center-->
+        <div class="continfofactura_main">
+          <div class="toggle-btn-menuburger"><span>&#9776</span></div>
+          <div class="fichainventario">
+            <!-- <div class="toggle-btn-create"><span>&#9546</span></div> -->
+            <div class="toggle-btn-modal"><span>&#9776</span></div>
+            MODULO DE VENTAS
+          </div>
+        </div>
+
+<div class="contable_main contable_main--whitebackground">
+  <!-- Cabecera de la venta -->
+  <div class="header-venta" >
+    <h2>Vendedor: </br> Juan Pérezz</h2>
+    <div>
+      <p>Fecha: <span id="currentDate"></span></p>
+      <p>Estado: <span class="estado nueva">Nueva Venta</span></p>  
+    </div>
+  </div>
+
+  <!-- Información del cliente -->
+  <div class="clienteInfo">
+    <label class="label_clienteInfo" for="cedulaCliente">Cédula del Cliente:</label>
+    <div class="body_clienteInfo">
+      <input type="text" id="cedulaCliente" placeholder="Ingrese cédula" disabled>
+      <p class="p__body_clienteInfo">
+        <span>Nombre del Cliente: </span>
+        <span id="nombreCliente">--Selecciona cliente--</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Filtros para productos -->
+  <div class="producto-filtros">
+    <select id="idcategoria">
+      <option value="champu">Categoría</option>
+      <option value="champu">Champú</option>
+      <option value="jabón">Jabón</option>
+      <!-- Agrega más categorías según sea necesario -->
+    </select>
+
+    <select id="idmarca">
+      <option value="marca">Marca</option>
+      <option value="pantene">Pantene</option>
+      <option value="dove">Dove</option>
+      <!-- Agrega más marcas según sea necesario -->
+    </select>
+
+    <select id="idproducto">
+      <option value="Producto">Producto</option>
+      <option value="botella300ml">Botella 300ml</option>
+      <option value="botella500ml">Botella 500ml</option>
+      <!-- Los productos que coinciden con la categoría y marca seleccionadas -->
+    </select>
+
+    <button class="blue-button" id="agregarProducto">Agregar</button>
+  </div>
+
+  <!-- Tabla de productos -->
+  <div class="tabla-productos">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Marca</th>
+          <th>Presentación</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Champú</td>
+          <td>Pantene</td>
+          <td>Botella 300ml</td>
+          <td>2</td>
+          <td>$15.00</td>
+        </tr>
+        <!-- Puedes agregar más filas de ejemplo aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer con total y descripción -->
+  <div class="footer">
+    <div class="total_footer">
+      <p>Total: <span id="total">$30.00</span></p>
+    </div>
+    <div class="contEstdVenta">
+      <div class="estado-venta">
+        <label for="estadoVenta">Estado de la venta:</label>
+        <select id="estadoVenta" >
+          <option value="nueva" >Nueva Venta</option>
+          <option value="cuentaPorCobrar">Cuenta por Cobrar</option>
+          <option value="cancelada">Cuenta Cancelada</option>
+        </select>
+      </div>
+        <!-- Campo de abono solo si es "Cuenta por Cobrar" -->
+      <div id="abonoSection" style="display: none;">
+        <label for="abono">Abono:</label>
+        <input type="number" id="abono" min="0" placeholder="Ingrese abono">
+      </div>
+    </div>
+
+    <button class="blue-button" id="registrarVenta">Registrar Venta</button>
+
+    <textarea id="descripcionVendedor" placeholder="Descripción del vendedor..."></textarea>
+  </div>
+</div>
+
+<!-- ///////////////////LISTA DE CLIENTES -->
+<div id="idModal">
+  <div class="contForm">
+    <h2>Lista de cliente</h2>
+
+    <!-- nombre, tipo_documento, numero_documento, estado_actor -->
+    <div class="contable_modal overflow-y-auto" >
+      <table border="1">
+        <thead class="fixed">
+            <tr>
+              <th>Seleccion</th>  
+              <th>Nombre</th>
+              <th>Num Documento</th>              
+            </tr>
+        </thead>
+        <tbody id="table-body" >
+          <tr>
+            <td><input type="checkbox" data-id="123"></td>
+            <td>CARGANDO</td>
+            <td>CARGANDO</td>                
+          </tr>
+          <tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO>CARGANDO>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+            <tr>
+              <td><input type="checkbox" data-id="123"></td>
+              <td>CARGANDO</td>
+              <td>CARGANDO</td>                
+            </tr>
+          </tr>
+            <td><input type="checkbox" data-id="123"></td>
+            <td>CARGANDO</td>
+            <td>CARGANDO</td>                
+          </tr>
+          </tr>
+            <td><input type="checkbox" data-id="123"></td>
+            <td>CARGANDO</td>
+            <td>CARGANDO</td>                
+          </tr>
+        </tr>
+          <td><input type="checkbox" data-id="123"></td>
+          <td>CARGANDO</td>
+          <td>CARGANDO</td>                
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="modal-buttons">
+        <button type="button" id="close-modal-button">Cerrar</button>
+        <button type="submit" id="send-button">Añadir</button>
+      </div>
+  </div>
+</div>
+
+<script>
+  // Rellenar la fecha actual automáticamente
+  document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+
+  // Mostrar sección de abono solo si es 'Cuenta por Cobrar'
+  document.getElementById('estadoVenta').addEventListener('change', function() {
+    const abonoSection = document.getElementById('abonoSection');
+    if (this.value === 'cuentaPorCobrar') {
+      abonoSection.style.display = 'block';
+    } else {
+      abonoSection.style.display = 'none';
+    }
+  });
+
+  // Aquí puedes agregar las funciones adicionales para manejar la búsqueda del cliente por cédula,
+  // así como la lógica para agregar productos a la tabla.
+</script>
+
+
+
+        </div>
+      </main>
+    </div>
+    <footer class="hidden contFooter"></footer>
+
+    
+
+
+
+    
+    <script src="script.js"></script>
+    <script src="resources/js/toggle-btn-menuburger.js"></script>
+    <script src="resources/js/get_all_product.js"></script>
+    <script src="resources/js/logica_delete.js"></script>
+    <script src="resources/js/modal.js"></script>
+    <script src="resources/js/consumer_listing_modal.js"></script>
+
+    
+    
+    <!-- <script src="resources/js/create_product.js"></script> -->
+  </body>
+</html>

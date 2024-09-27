@@ -106,7 +106,7 @@ exit-icon
     display: none;
 }
 
-.contmenu_aside .itemmenu:nth-last-child(-n +3) p{
+.contmenu_aside .itemmenu:nth-last-child(-n +2) p{
     color: grey;
 }
 

@@ -1,0 +1,196 @@
+nombreCliente
+/* //////////////////////////////////////// */
+descripcionVendedor
+h2, p {
+  margin: 0 0 10px 0;
+}
+
+
+.header-venta{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.clienteInfo .body_clienteInfo{
+    display: flex;
+    justify-content: space-between; 
+    align-content: flex-start; 
+}
+.p__body_clienteInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.p__body_clienteInfo #nombreCliente{
+    font-size: var(--textMd);
+    color: var(--color-backgrundmodule);
+}
+
+.body_clienteInfo input[type="text"] {
+    color: var(--color-backgrundmodule);
+    width: 40%;
+    padding: 9px;
+    font-size: var(--textMd);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+.estado-venta select {
+  padding: 9px;
+  font-size: 14px;
+  border: 2px solid #007bff; /* Color del borde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo del select */
+  color: #333; /* Color del texto */
+  min-width: 120px;
+  width: 90%;
+
+  appearance: none; /* Quita el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='%23007bff' d='M0 0L5 5L10 0H0Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+/*    background-position: right 10px center; */
+  background-position: right 10px top -2px;
+  cursor: pointer;
+}
+
+.producto-filtros select {
+    padding: 9px;
+    font-size: 14px;
+    border: 2px solid #007bff; /* Color del borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo del select */
+    color: #333; /* Color del texto */
+    min-width: 90px;
+    width: 25%;
+
+    appearance: none; /* Quita el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='%23007bff' d='M0 0L5 5L10 0H0Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+/*    background-position: right 10px center; */
+    background-position: right 10px top -2px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #ff9800; /* Cambia el color del borde al enfocarse */
+}
+
+.total_footer {
+    text-align: right; /* Alinea el contenido a la derecha */
+    padding: 10px;
+    font-size: 18px; /* Tamaño de texto */
+    border-top: 2px solid #ccc; /* Borde superior */
+    margin-top: 20px; /* Separación superior */
+    color: var(--color-backgrundmodule);
+}
+
+#total {
+    font-weight: bold;
+ /* Color del total */
+}
+
+#descripcionVendedor {
+    width: 100%; /* Se ajusta al ancho de la pantalla */
+    height: 75px;
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0;
+    resize: none; /* Desactiva la redimensión */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+#abono {
+    padding: 9px;
+    font-size: 14px;
+    min-width: 90px;
+    width: 90%;
+    background-color: #f9f9f9;
+    border: 2px solid #007bff;
+    margin: 0 0;
+}
+
+/* Estilo para los campos del formulario */
+
+
+.label_clienteInfo{
+}
+
+.blue-button{
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.blue-button:hover {
+    background-color: #0056b3;
+  }
+
+  #currentDate {
+    font-weight: bold;
+  }
+  
+  .estado {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .nueva {
+    background-color: rgb(213, 4, 25);
+    color: white;
+  }
+  
+  .cuentaPorCobrar {
+    background-color: orange;
+    color: white;
+  }
+  
+  .cancelada {
+    background-color: navy;
+    color: white;
+  }
+
+  .contEstdVenta{
+    display: flex;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
