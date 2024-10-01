@@ -25,7 +25,7 @@
         "marca": "Nivea",
         "categoria": "Desodorante",
         "presentacion": "Aerosol 150ml",
-        "estado": "Agotado"
+        "estado": "No disponible"
     },
     {
         "nombre": "Jabón de Barra",
@@ -53,7 +53,7 @@
         "marca": "Neutrogena",
         "categoria": "Jabón",
         "presentacion": "Botella 200ml",
-        "estado": "Agotado"
+        "estado": "No disponible"
     },
     {
         "nombre": "Champú Reparador",
@@ -81,7 +81,7 @@
         "marca": "Tresemmé",
         "categoria": "Champú",
         "presentacion": "Botella 500ml",
-        "estado": "Agotado"
+        "estado": "No disponible"
     },
     {
         "nombre": "Desodorante Roll-On",

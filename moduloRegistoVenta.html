@@ -132,31 +132,29 @@
       <option value="champu">Categoría</option>
       <option value="champu">Champú</option>
       <option value="jabón">Jabón</option>
+      
       <!-- Agrega más categorías según sea necesario -->
     </select>
 
     <select id="idmarca">
       <option value="marca">Marca</option>
-      <option value="pantene">Pantene</option>
-      <option value="dove">Dove</option>
       <!-- Agrega más marcas según sea necesario -->
     </select>
 
     <select id="idproducto">
       <option value="Producto">Producto</option>
-      <option value="botella300ml">Botella 300ml</option>
-      <option value="botella500ml">Botella 500ml</option>
       <!-- Los productos que coinciden con la categoría y marca seleccionadas -->
     </select>
 
-    <button class="blue-button" id="agregarProducto">Agregar</button>
+    <button class="blue-button" id="idagregarProducto">Agregar</button>
   </div>
 
-  <!-- Tabla de productos -->
+  <!-- Tabla de productos --> 
   <div class="tabla-productos">
     <table>
       <thead>
         <tr>
+          <th> </th>
           <th>Categoría</th>
           <th>Marca</th>
           <th>Presentación</th>
@@ -165,12 +163,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr id="tr0">
+          <td class="deleteProduct">X</td>
           <td>Champú</td>
           <td>Pantene</td>
           <td>Botella 300ml</td>
-          <td>2</td>
-          <td>$15.00</td>
+          <td >
+            <div style="display: flex;">
+              <input type="number" class="inputCantidad" name="cantidad" id="input0">
+              <span>XXX</span>
+            </div>
+          </td>
+          <td class="subtotal">$0.00</td>
         </tr>
         <!-- Puedes agregar más filas de ejemplo aquí -->
       </tbody>
@@ -311,10 +315,13 @@
 
 
     
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="resources/js/toggle-btn-menuburger.js"></script>
-    <script src="resources/js/get_all_product.js"></script>
-    <script src="resources/js/logica_delete.js"></script>
+    <!-- <script src="resources/js/get_all_product.js"></script>
+    <script src="resources/js/logica_delete.js"></script> -->
+
+    
+    <script src="resources/js/Logica_moduloRegistoVenta.js"></script>
     <script src="resources/js/modal.js"></script>
     <script src="resources/js/consumer_listing_modal.js"></script>
 

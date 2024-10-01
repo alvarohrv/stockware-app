@@ -92,6 +92,42 @@ select:focus {
     color: var(--color-backgrundmodule);
 }
 
+.tabla-productos table tbody tr td:nth-last-child(-n +2){
+  width: 15%;
+  /* background-color: aqua; */
+}
+
+.deleteProduct{
+  color: red;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.deleteProduct:hover{
+  font-weight: bold;
+}
+
+.tabla-productos table tbody tr td span{
+  display: none;
+  text-align: center;
+  color: red;
+  width: 20px;
+}
+.tabla-productos table tbody tr td span.warning{
+  display: inline-block;
+}
+
+.inputCantidad{
+  width: 100%;
+  
+  border: none;
+	outline: none;
+}
+
+.inputCantidad::placeholder{
+  color: #bbbbbb;
+  font-style: italic;
+}
 #total {
     font-weight: bold;
  /* Color del total */

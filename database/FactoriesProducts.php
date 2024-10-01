@@ -23,20 +23,25 @@ Class FactoriesProducts extends Connection {
 
         $jsonFile = file_get_contents('productos.json');
 
-
         $data = json_decode($jsonFile, true);
 
         $pdo = $this->conexion();
 
-        $sql = "INSERT INTO producto (nombre, marca, categoria, presentacion, estado) VALUES (:nombre, :marca, :categoria, :presentacion, :estado)";
+        $sql = "INSERT INTO producto (nombre, marca, categoria, presentacion,cantidad, precio, estado) VALUES (:nombre, :marca, :categoria, :presentacion, :cantidad, :precio, :estado)";
+
         $stmt = $pdo->prepare($sql);
 
         foreach ($data as $row) {
+            $cantidadAleatorio = rand(0, 40);
+            $precioAleatorio = rand(20, 100);
+
             $stmt->execute([
                 ':nombre' => $row['nombre'],
                 ':marca' => $row['marca'],
                 ':categoria' => $row['categoria'],
                 ':presentacion' => $row['presentacion'],
+                ':cantidad' => $cantidadAleatorio,
+                ':precio' => $precioAleatorio,
                 ':estado' => $row['estado']
             ]);
         }
@@ -46,7 +51,7 @@ Class FactoriesProducts extends Connection {
 }
 
 // Prueba de la clase Factories
-$factories = new Factories();
+$factories = new FactoriesProducts();
 $factories->insertData();
 
 ?>
