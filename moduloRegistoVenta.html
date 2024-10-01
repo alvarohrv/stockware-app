@@ -129,9 +129,6 @@
   <!-- Filtros para productos -->
   <div class="producto-filtros">
     <select id="idcategoria">
-      <option value="champu">Categoría</option>
-      <option value="champu">Champú</option>
-      <option value="jabón">Jabón</option>
       
       <!-- Agrega más categorías según sea necesario -->
     </select>
@@ -163,15 +160,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr id="tr0">
-          <td class="deleteProduct">X</td>
-          <td>Champú</td>
-          <td>Pantene</td>
-          <td>Botella 300ml</td>
+        <tr id="idtr0">
+          <td class="deleteProduct"></td>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
           <td >
             <div style="display: flex;">
-              <input type="number" class="inputCantidad" name="cantidad" id="input0">
-              <span>XXX</span>
+              <input type="number" class="inputCantidad" name="cantidad" id="input0" disabled>
+              <span>X</span>
             </div>
           </td>
           <td class="subtotal">$0.00</td>
@@ -184,7 +181,7 @@
   <!-- Footer con total y descripción -->
   <div class="footer">
     <div class="total_footer">
-      <p>Total: <span id="total">$30.00</span></p>
+      <p>Total: <span id="idtotal">$ 0.00</span></p>
     </div>
     <div class="contEstdVenta">
       <div class="estado-venta">
