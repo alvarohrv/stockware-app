@@ -26,7 +26,47 @@
 
     <link rel="stylesheet" type="text/css" href="./resources/css/queries.css">
     <link rel="stylesheet" type="text/css" href="./style_media_minw800.css">
-    <style type="text/css"> </style>
+    <style type="text/css"> 
+
+#tooltip {
+  visibility: hidden;
+  width: max-content;
+  position: absolute;
+  right: calc(var(--w-toggle-btn-menuburger)* 2);
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 100;
+}
+#tooltip2 {
+  visibility: hidden;
+  width: max-content;
+  position: absolute;
+  right: calc(var(--w-toggle-btn-menuburger)* 1);
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 100;
+}
+
+#idtogglebtnmodal:hover + #tooltip {
+  visibility: visible;
+}
+#idtogglebtnmodal2:hover + #tooltip2 {
+  visibility: visible;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: .3; /* Asegura que las flechas estén siempre visibles */
+        }
+        
+
+    </style>
   </head>
   <body class=" contBody">   <!-- contCentrado -->
     <div class="contHeader hidden"><header class="header"><nav class="navbar wrapper1">Nav</nav><div class="wrapper1">Hero</div></header></div>
@@ -99,7 +139,10 @@
           <div class="toggle-btn-menuburger"><span>&#9776</span></div>
           <div class="fichainventario">
             <!-- <div class="toggle-btn-create"><span>&#9546</span></div> -->
-            <div class="toggle-btn-modal"><span>&#9776</span></div>
+             <!-- <div>
+                <div class="toggle-btn-modal" id="idtogglebtnmodal"><span>&#9776</span></div>
+                <div id="tooltip">Despliega lista de Clientes.</div>
+             </div> -->
             MODULO DE VENTAS
           </div>
         </div>
@@ -107,18 +150,28 @@
 <div class="contable_main contable_main--whitebackground">
   <!-- Cabecera de la venta -->
   <div class="header-venta" >
-    <h2>Vendedor: </br> Juan Pérezz</h2>
+    <h2>Vendedor: </br> Pepito Pérezz</h2>
     <div>
-      <p>Fecha: <span id="currentDate"></span></p>
+      <p>Fecha: <span id="idcurrentDate"></span></p>
       <p>Estado: <span class="estado nueva">Nueva Venta</span></p>  
     </div>
   </div>
 
   <!-- Información del cliente -->
   <div class="clienteInfo">
-    <label class="label_clienteInfo" for="cedulaCliente">Cédula del Cliente:</label>
+    <label class="label_clienteInfo" for="idInputCedulaCliente" style="opacity: 0.4;">Cédula del Cliente:</label>
     <div class="body_clienteInfo">
-      <input type="text" id="cedulaCliente" placeholder="Ingrese cédula" disabled>
+      <div style="display: flex;">
+        <input type="text" id="idInputCedulaCliente" placeholder="Ingrese cédula (No habilitado)" disabled style="opacity: 0.4;">
+        <div style="position: relative;">
+          <div class="toggle-btn-search" id="idtogglebtnmodal2"><span>&#x1f50d</span></div>
+          <div id="tooltip2">Funcionalidad no habilidata.</div>
+       </div>
+        <div style="position: relative;" >
+          <div class="toggle-btn-modal" id="idtogglebtnmodal"><span>&#9776</span></div>
+          <div id="tooltip">Despliega lista de Clientes.</div>
+       </div>
+      </div>
       <p class="p__body_clienteInfo">
         <span>Nombre del Cliente: </span>
         <span id="nombreCliente">--Selecciona cliente--</span>
@@ -185,23 +238,23 @@
     </div>
     <div class="contEstdVenta">
       <div class="estado-venta">
-        <label for="estadoVenta">Estado de la venta:</label>
-        <select id="estadoVenta" >
-          <option value="nueva" >Nueva Venta</option>
+        <label for="idEstadoVenta">Estado de la venta:</label>
+        <select id="idEstadoVenta" >
+          <option value="cancelada">Pago al Contado</option>
           <option value="cuentaPorCobrar">Cuenta por Cobrar</option>
-          <option value="cancelada">Cuenta Cancelada</option>
+          <option value="nueva" >Venta no culminada</option>
         </select>
       </div>
         <!-- Campo de abono solo si es "Cuenta por Cobrar" -->
       <div id="abonoSection" style="display: none;">
         <label for="abono">Abono:</label>
-        <input type="number" id="abono" min="0" placeholder="Ingrese abono">
+        <input type="number" id="idabono" min="0" placeholder="Ingrese abono">
       </div>
     </div>
 
-    <button class="blue-button" id="registrarVenta">Registrar Venta</button>
+    <button class="blue-button" id="idregistrarVenta">Registrar Venta</button>
 
-    <textarea id="descripcionVendedor" placeholder="Descripción del vendedor..."></textarea>
+    <textarea id="iddescripcionVendedor" maxlength="150" placeholder="Descripción del vendedor..."></textarea>
   </div>
 </div>
 
@@ -284,10 +337,10 @@
 
 <script>
   // Rellenar la fecha actual automáticamente
-  document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+  document.getElementById('idcurrentDate').innerText = new Date().toLocaleDateString();
 
   // Mostrar sección de abono solo si es 'Cuenta por Cobrar'
-  document.getElementById('estadoVenta').addEventListener('change', function() {
+  document.getElementById('idEstadoVenta').addEventListener('change', function() {
     const abonoSection = document.getElementById('abonoSection');
     if (this.value === 'cuentaPorCobrar') {
       abonoSection.style.display = 'block';
@@ -308,19 +361,15 @@
     <footer class="hidden contFooter"></footer>
 
     
-
-
-
     
     <!-- <script src="script.js"></script> -->
     <script src="resources/js/toggle-btn-menuburger.js"></script>
     <!-- <script src="resources/js/get_all_product.js"></script>
     <script src="resources/js/logica_delete.js"></script> -->
 
-    
-    <script src="resources/js/Logica_moduloRegistoVenta.js"></script>
-    <script src="resources/js/modal.js"></script>
-    <script src="resources/js/consumer_listing_modal.js"></script>
+    <script type="module" src="resources/js/Logica_moduloRegistoVenta.js"></script>
+    <script type="module" src="resources/js/modal.js"></script>
+    <script type="module" src="resources/js/consumer_listing_modal.js"></script>
 
     
     

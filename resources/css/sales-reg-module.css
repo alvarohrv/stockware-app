@@ -1,6 +1,6 @@
-nombreCliente
+
 /* //////////////////////////////////////// */
-descripcionVendedor
+
 h2, p {
   margin: 0 0 10px 0;
 }
@@ -13,12 +13,13 @@ h2, p {
 
 
 .clienteInfo .body_clienteInfo{
-    display: flex;
-    justify-content: space-between; 
-    align-content: flex-start; 
+  display: flex;
+  justify-content: space-between; 
+  align-content: flex-start; 
 }
 .p__body_clienteInfo{
     display: flex;
+    width: 40%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -37,6 +38,11 @@ h2, p {
     border: 1px solid #ccc;
     height: 40px;
 }
+
+#idInputCedulaCliente{
+  width: calc(var(--w-toggle-btn-menuburger) * 7);
+}
+
 
 .estado-venta select {
   padding: 9px;
@@ -119,7 +125,7 @@ select:focus {
 
 .inputCantidad{
   width: 100%;
-  
+  opacity: .8;
   border: none;
 	outline: none;
 }
@@ -128,12 +134,12 @@ select:focus {
   color: #bbbbbb;
   font-style: italic;
 }
-#total {
+#idtotal {
     font-weight: bold;
  /* Color del total */
 }
 
-#descripcionVendedor {
+#iddescripcionVendedor {
     width: 100%; /* Se ajusta al ancho de la pantalla */
     height: 75px;
     padding: 10px; /* Espaciado interno */
@@ -145,7 +151,7 @@ select:focus {
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
-#abono {
+#idabono {
     padding: 9px;
     font-size: 14px;
     min-width: 90px;

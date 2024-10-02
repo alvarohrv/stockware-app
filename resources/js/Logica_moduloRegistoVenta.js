@@ -1,35 +1,8 @@
+import { ObjetoVenta, Pedido } from './globales_moduloRegVenta.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 //// IMPORTANTE se omite la primera Identacion!!!!!!!!!!!!!!!!!!
 
-let dataglobal = []
-let globalFilteredProductsCatg = []
-let globalFilteredProductsMarc = []
-let globalCategoriesArray = [];
-
-let  ObjetoVenta = {
-    globalPedido: [/*{
-        "idProducto": 1,
-        "cantidad": 5,
-        "precioVenta": 95,
-        "subtotal": 100
-    },{
-        "idProducto": 2,
-        "cantidad": 5,
-        "precioVenta": 95,
-        "subtotal": 100
-    }*/],
-    cliente: {
-        "id": null,
-        "nombre": ""
-    },
-    numeroFactura: "",
-    total: null,
-    pedido: [],
-    AddPedido: function(pedido){
-        this.globalPedido.push(pedido);
-    }
-}
 
 const NodoTrCARGANDO= document.getElementById('idtr0');
 const selectNodoCategory = document.getElementById('idcategoria');
@@ -38,9 +11,19 @@ const selectNodoProduct= document.getElementById('idproducto');
 const NodoBottomAddProduct= document.getElementById('idagregarProducto');
 const NodoTbody = document.querySelector(".tabla-productos table tbody")
 const NodoTotalPagar= document.getElementById('idtotal');
+const NodoBottomSalesRegister= document.getElementById('idregistrarVenta');
+const NodoInputAbono = document.getElementById('idabono');
+const NodoTextDescripcion= document.getElementById('iddescripcionVendedor');
+const NodoNameCostumer= document.getElementById('nombreCliente');
+const NodoInputEstado = document.getElementById('idEstadoVenta');
 
 
+ 
 
+let dataglobal = []
+let globalFilteredProductsCatg = []
+let globalFilteredProductsMarc = []
+let globalCategoriesArray = [];
 
 
 fetch('http://localhost/ProySenaProdv01/api/get_all_product.php')
@@ -66,6 +49,8 @@ fetch('http://localhost/ProySenaProdv01/api/get_all_product.php')
     fnListenerAndLoadDeSelectProduct()
 
     fnListenerClickAdd_Reset_validation(fnAddRecordAndFeatures)
+
+    fnListenerClickSale_Reset_validation()
     
 })
 .catch(error => console.error('Error:', error));
@@ -95,7 +80,7 @@ function fnListenerAndLoadDeSelectBrand(){
             globalFilteredProductsCatg  = dataglobal.filter(product => product.categoria === (selectNodoCategory.value));
         
             // Obtener las marcas únicas de los productos filtrados
-            uniqueBrands = new Set(globalFilteredProductsCatg .map(product => product.marca));
+            let uniqueBrands = new Set(globalFilteredProductsCatg .map(product => product.marca));
         
             // Limpiar el select de marcas y agregar las nuevas opciones
         
@@ -190,17 +175,6 @@ function fnResetSelect(nodo, value){
     
 
 
-function fn_Async(){ 		
-    const promesa1=(resolved, reject)=>{  // {} logica de la promesa
-        setTimeout(()=>{
-            resolved(usuarios) //<- ya no invoca un callback si no una funcion 'resolved()' //el valor de null para dase de datos sin error no hace falta.
-                                //'resolved' es lo que deseamos retornar si la promesa es exitosa //la base de datos.
-        },400) //por lo que es asincrono
-    } //fin de la logica
-    return new Promise(promesa1)  //retornando una promesa //promesa1 sera una fn con la logica del proceso, practicamente en un callback (que internamente posee dos callback más)
-}
-
-
 function fnAddRecordAndFeatures(producto){ //
     // console.log('fnAddRecordAndFeatures')
     // console.log(producto)
@@ -220,7 +194,7 @@ function fnAddRecordAndFeatures(producto){ //
                         class="inputCantidad"
                         name="cantidad"
                         id="idInputCantidad_${producto.id}"
-                        placeholder="${producto.cantidad}">
+                        placeholder="${producto.cantidad} en stock">
                     <span id="idspan_${producto.id}" > &#9888 </span>
                 </div>
             </td>
@@ -231,29 +205,33 @@ function fnAddRecordAndFeatures(producto){ //
             //<input type="number" class="inputCantidad" name="cantidad" id="">
 
             const element_tr = document.createElement('tr');
-            element_tr.id=`#idtr_${producto.id}`
+            element_tr.id=`idtr_${producto.id}`
             element_tr.innerHTML=template
             NodoTbody.appendChild(element_tr); 
             
             //fnRegistroInicialDelPedido
 
-            let pedido =  {
-                "idProducto": producto.id,
-                "cantidad": 0,
-                "precioVenta": producto.precio,
-                "subtotal": 0
-            }
+            // let pedido =  {
+            //     "idProducto": producto.id,
+            //     "cantidad": 0,
+            //     "precioVenta": producto.precio,
+            //     "subtotal": 0
+            // }
+
+            let pedido = new Pedido(producto.id);
+            pedido.precioVenta = producto.precio,
+            
             ObjetoVenta.AddPedido(pedido)
 
-            fnToogleTrCARGANDO(ObjetoVenta.globalPedido)
+            ToolToogleTrCARGANDO()
 
-            fnDeleteOption(element_tr, producto, fnCalcularTotal)
+            fnListenerClickDelete(producto.id, fnReCalcularTotal)
             
             fnSetProductQuantity(producto)
 
-            console.log('AGRAGADO')           
+            // console.log('AGRAGADO')           
         }else{
-            alert("Producto o repetido")  
+            alert("Producto repetido")  
         }
     }else{
         alert("Producto No disponible")
@@ -261,39 +239,43 @@ function fnAddRecordAndFeatures(producto){ //
 
 }
 
-function fnDeleteOption(filaTr, producto, callback){
-    let nodoBtnDeleteProduct = document.querySelector(`#idbtndlt_${producto.id}`)
+function fnListenerClickDelete(id, callback){
+    let nodoBtnDeleteProduct = document.querySelector(`#idbtndlt_${id}`)
+
     nodoBtnDeleteProduct.addEventListener("click",()=>{
-        console.log('------predelete-------');
-        console.log(ObjetoVenta.globalPedido);
+        // console.log('------predelete-------');
+        // console.log(ObjetoVenta.globalPedido);
         
         if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
-            NodoTbody.removeChild(filaTr)
-            
-            const indice = ObjetoVenta.globalPedido.findIndex(objeto => objeto.idProducto === producto.id);
-
-            if (indice !== -1) {
-                ObjetoVenta.globalPedido.splice(indice, 1);
-            }
-            console.log('------delete-------');
-            console.log(ObjetoVenta.globalPedido);
-
-            fnToogleTrCARGANDO(ObjetoVenta.globalPedido)
-
+            ToolDeleteTrOption(id)   
+            ToolToogleTrCARGANDO()
             callback()
         }
     })
 }
+
+function ToolDeleteTrOption(id){
+    let NodeRowTr = document.querySelector(`#idtr_${id}`)
+    // console.log(NodeRowTr)
+    NodoTbody.removeChild(NodeRowTr)
+    const indice = ObjetoVenta.globalPedido.findIndex(objeto => objeto.idProducto === id);
+    if (indice !== -1) {
+        ObjetoVenta.globalPedido.splice(indice, 1);
+    }
+    // console.log('------delete-------');
+    // console.log(ObjetoVenta.globalPedido);
+}
+
 
 function fnSetProductQuantity(producto){
     let nodoTdTypeSelect = document.querySelector(`#idInputCantidad_${producto.id}`)
     nodoTdTypeSelect.addEventListener('change',(e)=>{         
 
         console.log(e.target.value)
-        let cantidad = e.target.value;
-
-        if(cantidad>0){
-            nodoSpam = document.querySelector(`#idspan_${producto.id}`)
+        let cantidad = Number(e.target.value); //combierte a numero dato del form
+        
+        if(cantidad>0 && Number.isInteger(cantidad)){
+            let nodoSpam = document.querySelector(`#idspan_${producto.id}`)
 
             if(cantidad>producto.cantidad){
 
@@ -302,19 +284,20 @@ function fnSetProductQuantity(producto){
 
                 let subtotal = fnCalcularSubTotal(producto,cantidad)
 
-                fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, cantidad, subtotal, fnCalcularTotal)
+                fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, cantidad, subtotal, fnReCalcularTotal)
 
             }
             else{
                 nodoSpam.classList.remove('warning')
                 let subtotal = fnCalcularSubTotal(producto,cantidad)
-                fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, cantidad, subtotal, fnCalcularTotal)
+                fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, cantidad, subtotal, fnReCalcularTotal)
             }
         }
         else{
             alert("inserta un valor valido")
-            let td = document.querySelector(`#idInputCantidad_${producto.id}`)
-            td.value = '';
+            nodoTdTypeSelect.value = '';
+            fnCalcularSubTotal(producto,0)
+            fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, 0, 0, fnReCalcularTotal)
         }
 
     })
@@ -330,40 +313,104 @@ function fnCalcularSubTotal(producto,cantidad){
 
 function fnRegistroDelPropiedadesDelPedidoEnObjVenta(producto, cantidad, subtotal, callback){
 
-    
-    let indiceProd = ObjetoVenta.globalPedido.findIndex(objeto => objeto.idProducto === producto.id);
-    if (indiceProd !== -1) {
-        productoPedido = ObjetoVenta.globalPedido[indiceProd]
-    }
-        productoPedido.cantidad = cantidad
-        productoPedido.subtotal = subtotal
+    // console.log('-------ObjetoVenta++----------')
+    // console.log(ObjetoVenta.globalPedido);
 
-    console.log('-------ObjetoVenta++----------')
-    console.log(ObjetoVenta);
+    let indiceProd = ObjetoVenta.globalPedido.findIndex(objeto => objeto.idProducto === producto.id);
+    let instanciaDelproductoPedido
+
+    if (indiceProd !== -1) {
+        instanciaDelproductoPedido = ObjetoVenta.globalPedido[indiceProd]
+    }
+        instanciaDelproductoPedido.cantidad = cantidad
+        instanciaDelproductoPedido.subtotal = subtotal
 
     callback()
 }
 
-function fnCalcularTotal(){
-    ArrayPedidos = ObjetoVenta.globalPedido 
-    //Sumar casa ArrayPedidos.subtotal y guardar en una variable llama TotalPagar
+function fnReCalcularTotal(){
 
-    let TotalPagar = ArrayPedidos.reduce((acumulador, pedido) => {
+    let TotalPagar = ObjetoVenta.globalPedido.reduce((acumulador, pedido) => {
         return acumulador + pedido.subtotal;
     }, 0);
 
     NodoTotalPagar.innerHTML = `$${TotalPagar}`
+    ObjetoVenta.total=TotalPagar
+
 }
 
-function  fnToogleTrCARGANDO(ArrayPedidos){
+function  ToolToogleTrCARGANDO(){
+    let ArrayPedidos = ObjetoVenta.globalPedido 
+
     if(ArrayPedidos.length!=0){
         NodoTrCARGANDO.style.display="none"
     }else{
         NodoTrCARGANDO.style.display="table-row"
     }
 }
+function toolValidacionCantidadesDigitadas(){
+    return !(ObjetoVenta.globalPedido.some(obj => obj.cantidad <= 0 || obj.cantidad==null || obj.cantidad==undefined))
+}
+function fnListenerClickSale_Reset_validation(){
+    
+    NodoBottomSalesRegister.addEventListener("click",()=>{
+        // console.log(ObjetoVenta)
+        ObjetoVenta.date =  new Date().toLocaleDateString()
+        ObjetoVenta.estado = String(NodoInputEstado.value)? String(NodoInputEstado.value): null
+        ObjetoVenta.abono = Number(NodoInputAbono.value)? Number(NodoInputAbono.value): 0
+        let descripcion = String(NodoTextDescripcion.value)? String(NodoTextDescripcion.value) : '' 
+        if (descripcion.length <= 150) {
+            ObjetoVenta.descripcion =  descripcion
+        }else{
+            alert('Has excedido el límite de caracteres en la descripcion.');
+        }
+
+        if(ObjetoVenta.globalPedido .length!=0){
+            if(ObjetoVenta.cliente.id != null){
+                if(ObjetoVenta.total != 0){
+                    if(toolValidacionCantidadesDigitadas() != 0){
+                        if (confirm("¿Estás seguro de que deseas generar la venta?")) {
+
+                            console.log('---Json Venta---')
+                            let ObjetoVentaCopia = Object.assign({}, ObjetoVenta); //copiaSuperficial
+                            ObjetoVentaCopia.descripcion = "Esto es solo una Copia del objeto Original"
+                            ObjetoVentaCopia.globalPedido = [...ObjetoVenta.globalPedido]
+                            console.log(ObjetoVentaCopia)
+
+                            NodoInputAbono.value = 0
+                            NodoTextDescripcion.value = ''
+                            NodoTotalPagar.innerHTML = `$ 0.00`
+                            NodoNameCostumer.innerHTML = `--Selecciona cliente--`
+                            
+                            let template = `\n VENTA REGISTRADA \n CLIENTE: ${ObjetoVenta.cliente.nombre} \n FECHA: ${ObjetoVenta.date} \n POT UN TOTAL DE: ${ObjetoVenta.total} \n (nota: funcionalidad por desarrollar  / Fin del programa)`
+    
+                            alert(template);
+                            // ObjetoVenta.globalPedido.forEach(objeto => {
+                            //     ToolDeleteTrOption(objeto.idProducto);
+                            // });
+                            // ToolToogleTrCARGANDO()   
+                        }
+                    }else{
+                        alert('Establece la cantidad.')
+                    }
+                }
+                else{
+                    alert('Establece la cantidad')
+                }
+            }else{
+                alert('Seleciona un cliente de la lista (Despliega la lista y selecciona)')
+            }
+        }else{
+            alert('No se ha seleccionado productos')
+        }
+    })  
+    // if(!(ObjetoVenta.globalPedido.some(obj => obj.idProducto == producto.id))){}
+}
 
 });
+
+
+
 
 
 

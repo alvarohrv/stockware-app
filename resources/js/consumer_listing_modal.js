@@ -1,4 +1,7 @@
+import { ObjetoVenta } from './globales_moduloRegVenta.js';
 
+const modalForm = document.getElementById('idModal');
+const contBody = document.getElementsByClassName('contBody')[0];
 const btnModal = document.getElementsByClassName('toggle-btn-modal')[0];
 const sendButton = document.getElementById('send-button');
 const nameCostumer = document.getElementById('nombreCliente');
@@ -53,7 +56,7 @@ function listenerCheckbox() {
             if (checkbox.checked) {
                 //sendButton.style.backgroundColor="var(--color-create);" //No funciono ???
                 sendButton.style = '';
-                selectedCheckboxId = checkbox.id
+                let selectedCheckboxId = checkbox.id //// sera solo una valor numerico
                 console.log('checked '+selectedCheckboxId)
                 checkboxes.forEach(otherCheckbox => {
                     if (otherCheckbox.id !== selectedCheckboxId) {
@@ -62,6 +65,8 @@ function listenerCheckbox() {
                   });
                 // Si se selecciona un checkbox, habilitar el botón y guardar el cliente
                 selectedCostumer = checkbox.value; // Guardar el nombre del cliente seleccionado
+                ObjetoVenta.cliente.nombre=selectedCostumer
+                ObjetoVenta.cliente.id=Number(selectedCheckboxId) 
                 //console.log('selectedCostumer '+selectedCostumer);
 
             } else {
@@ -79,6 +84,7 @@ function listenerClickSendButton() {
     sendButton.addEventListener('click', function () {
         if (selectedCostumer) {
             nameCostumer.innerHTML = selectedCostumer; // Actualizar el nombre del cliente en el HTML
+            
         } else {
             console.error('No customer selected');
         }
