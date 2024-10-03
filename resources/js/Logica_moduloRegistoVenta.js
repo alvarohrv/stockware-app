@@ -1,24 +1,15 @@
-import { ObjetoVenta, Pedido } from './globales_moduloRegVenta.js';
+import { ObjetoVenta } from './objetos/ObjetoVenta.js';
+import { Pedido } from './objetos/Pedido.js';
+import {ToolToogleTrCARGANDO} from './tools/ToolToogleTrCARGANDO.js'
+import {toolValidacionCantidadesDigitadas} from './tools/toolValidacionCantidadesDigitadas.js'
+import {toolDeleteTrOption} from './tools/toolDeleteTrOption.js'
+import {selectNodoCategory,selectNodoBrand,selectNodoProduct,
+NodoBottomAddProduct,NodoTbody ,NodoTotalPagar,
+NodoBottomSalesRegister,NodoInputAbono,NodoTextDescripcion,
+NodoNameCostumer,NodoInputEstado} from './nodos/nodos.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 //// IMPORTANTE se omite la primera Identacion!!!!!!!!!!!!!!!!!!
-
-
-const NodoTrCARGANDO= document.getElementById('idtr0');
-const selectNodoCategory = document.getElementById('idcategoria');
-const selectNodoBrand = document.getElementById('idmarca');
-const selectNodoProduct= document.getElementById('idproducto');
-const NodoBottomAddProduct= document.getElementById('idagregarProducto');
-const NodoTbody = document.querySelector(".tabla-productos table tbody")
-const NodoTotalPagar= document.getElementById('idtotal');
-const NodoBottomSalesRegister= document.getElementById('idregistrarVenta');
-const NodoInputAbono = document.getElementById('idabono');
-const NodoTextDescripcion= document.getElementById('iddescripcionVendedor');
-const NodoNameCostumer= document.getElementById('nombreCliente');
-const NodoInputEstado = document.getElementById('idEstadoVenta');
-
-
- 
 
 let dataglobal = []
 let globalFilteredProductsCatg = []
@@ -247,25 +238,12 @@ function fnListenerClickDelete(id, callback){
         // console.log(ObjetoVenta.globalPedido);
         
         if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
-            ToolDeleteTrOption(id)   
+            toolDeleteTrOption(id, ObjetoVenta)   
             ToolToogleTrCARGANDO()
             callback()
         }
     })
 }
-
-function ToolDeleteTrOption(id){
-    let NodeRowTr = document.querySelector(`#idtr_${id}`)
-    // console.log(NodeRowTr)
-    NodoTbody.removeChild(NodeRowTr)
-    const indice = ObjetoVenta.globalPedido.findIndex(objeto => objeto.idProducto === id);
-    if (indice !== -1) {
-        ObjetoVenta.globalPedido.splice(indice, 1);
-    }
-    // console.log('------delete-------');
-    // console.log(ObjetoVenta.globalPedido);
-}
-
 
 function fnSetProductQuantity(producto){
     let nodoTdTypeSelect = document.querySelector(`#idInputCantidad_${producto.id}`)
@@ -339,18 +317,6 @@ function fnReCalcularTotal(){
 
 }
 
-function  ToolToogleTrCARGANDO(){
-    let ArrayPedidos = ObjetoVenta.globalPedido 
-
-    if(ArrayPedidos.length!=0){
-        NodoTrCARGANDO.style.display="none"
-    }else{
-        NodoTrCARGANDO.style.display="table-row"
-    }
-}
-function toolValidacionCantidadesDigitadas(){
-    return !(ObjetoVenta.globalPedido.some(obj => obj.cantidad <= 0 || obj.cantidad==null || obj.cantidad==undefined))
-}
 function fnListenerClickSale_Reset_validation(){
     
     NodoBottomSalesRegister.addEventListener("click",()=>{
@@ -368,7 +334,7 @@ function fnListenerClickSale_Reset_validation(){
         if(ObjetoVenta.globalPedido .length!=0){
             if(ObjetoVenta.cliente.id != null){
                 if(ObjetoVenta.total != 0){
-                    if(toolValidacionCantidadesDigitadas() != 0){
+                    if(toolValidacionCantidadesDigitadas(ObjetoVenta) != 0){
                         if (confirm("¿Estás seguro de que deseas generar la venta?")) {
 
                             console.log('---Json Venta---')
@@ -385,10 +351,10 @@ function fnListenerClickSale_Reset_validation(){
                             let template = `\n VENTA REGISTRADA \n CLIENTE: ${ObjetoVenta.cliente.nombre} \n FECHA: ${ObjetoVenta.date} \n POT UN TOTAL DE: ${ObjetoVenta.total} \n (nota: funcionalidad por desarrollar  / Fin del programa)`
     
                             alert(template);
-                            // ObjetoVenta.globalPedido.forEach(objeto => {
-                            //     ToolDeleteTrOption(objeto.idProducto);
-                            // });
-                            // ToolToogleTrCARGANDO()   
+                            ObjetoVenta.globalPedido.forEach(objeto => {
+                                toolDeleteTrOption(objeto.idProducto,ObjetoVenta);
+                            });
+                            ToolToogleTrCARGANDO()   
                         }
                     }else{
                         alert('Establece la cantidad.')

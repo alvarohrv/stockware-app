@@ -1,4 +1,4 @@
-let  ObjetoVenta = {
+export let  ObjetoVenta = {
     globalPedido: [/*{
         "idProducto": 1,
         "cantidad": 5,
@@ -25,16 +25,7 @@ let  ObjetoVenta = {
     }
 }
 
-class Pedido {
-    constructor(idProducto) {
-        this.idProducto = idProducto
-        this.cantidad = null;
-        this.precioVenta = null;
-        this.subtotal = null;
-    }
-}
-
-export { ObjetoVenta, Pedido };
+// export { ObjetoVenta, Pedido };
 
 // export default {
 //     ObjetoVenta,

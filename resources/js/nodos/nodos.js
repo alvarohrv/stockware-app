@@ -1,0 +1,12 @@
+export const NodoTrCARGANDO = document.getElementById('idtr0');
+export const selectNodoCategory = document.getElementById('idcategoria');
+export const selectNodoBrand = document.getElementById('idmarca');
+export const selectNodoProduct = document.getElementById('idproducto');
+export const NodoBottomAddProduct = document.getElementById('idagregarProducto');
+export const NodoTbody = document.querySelector(".tabla-productos table tbody");
+export const NodoTotalPagar = document.getElementById('idtotal');
+export const NodoBottomSalesRegister = document.getElementById('idregistrarVenta');
+export const NodoInputAbono = document.getElementById('idabono');
+export const NodoTextDescripcion = document.getElementById('iddescripcionVendedor');
+export const NodoNameCostumer = document.getElementById('nombreCliente');
+export const NodoInputEstado = document.getElementById('idEstadoVenta');

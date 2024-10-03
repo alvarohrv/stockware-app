@@ -1,4 +1,4 @@
-import { ObjetoVenta } from './globales_moduloRegVenta.js';
+import { ObjetoVenta } from './objetos/ObjetoVenta.js';
 
 const modalForm = document.getElementById('idModal');
 const contBody = document.getElementsByClassName('contBody')[0];
