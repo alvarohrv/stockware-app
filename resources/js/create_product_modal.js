@@ -3,9 +3,9 @@
 
 const productTableBody = document.getElementById('product-table-body');
 const form = document.getElementById('create-product-form');
-const modalForm = document.getElementById('idModal');
+const modalFormC = document.getElementById('idModal');
 const sendButton = document.getElementById('send-button');
-const contBody = document.getElementsByClassName('contBody')[0];
+const contBodyC = document.getElementsByClassName('contBody')[0];
 
 
 sendButton.addEventListener('click', async function(event) {
@@ -36,8 +36,8 @@ sendButton.addEventListener('click', async function(event) {
             console.log('Producto creado correctamente');
             loadProducts(); // Recarga los productos
             form.reset(); // Limpia el formulario
-            modalForm.style.display = 'none'; // Cierra el modal
-            contBody.style.overflowY = 'auto';
+            modalFormC.style.display = 'none'; // Cierra el modal
+            contBodyC.style.overflowY = 'auto';
         } else {
             console.error('Error al crear el producto:', response.statusText);
         }
@@ -47,7 +47,7 @@ sendButton.addEventListener('click', async function(event) {
     }
     // Opcional: Cerrar el modal después de enviar
     document.getElementById('idModalForm').style.display = 'none';
-    contBody.style.overflowY = 'auto';
+    contBodyC.style.overflowY = 'auto';
 });
 
 async function loadProducts() {

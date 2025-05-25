@@ -3,7 +3,6 @@ import { toolDeleteTrOption } from '../../resources/js/tools/toolDeleteTrOption.
 
 let ObjetoVenta;
 
-
 describe('ToolDeleteTrOption', () => {
 
     beforeEach(() => {

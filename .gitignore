@@ -1,3 +1,7 @@
 core/connection_PRODUCCION.php
-
 node_modules/
+
+# vscode que configura el entorno de desarrollo
+.vscode
+# variables de entorno   
+.env

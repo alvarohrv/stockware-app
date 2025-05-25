@@ -21,6 +21,9 @@ abstract class Crud extends Connection{ //abstract puesto que no se van a crear 
     private $pdo;  
 
     public function __construct($table) {
+        parent::__construct(); //llama al constructor de la clase Connection (se requiere para la conexion a la DB)
+            //El constructor de la clase Connection se ejecuta primero, y luego el de la clase Crud
+            
             //el argumento de este parametro viene desde los archivos de la carpeta (por ejemplo) model/animal.php 
             //Este metodo es de llamado automatico cuando se instancia un objeto!. //__construct() es un metodo magico
         $this->table=$table; //La instancia adopta la variable $table; la compartira con toda la CLASE. Sera la tabla a aplicar CRUD
