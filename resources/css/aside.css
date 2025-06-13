@@ -116,10 +116,12 @@ exit-icon
         position: absolute;
         width: 100vw;
         display: none;
+        z-index: 100;
     }
 
     .contAside.active{
         display: block;
+        z-index: 100;
     }
 }
 
