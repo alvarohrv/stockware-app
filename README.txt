@@ -8,7 +8,6 @@ Diseño y Desarrollo de servicios web
 GA7-220501096-AA5-EV03
 
 Integrantes grupo 3.
-Sandra Milena Buitrago Amaya
 Álvaro Hernán Ruiz Vivas
 
 Instructora
